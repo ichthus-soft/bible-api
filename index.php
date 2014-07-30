@@ -31,7 +31,8 @@ $app->register(new \Silex\Provider\DoctrineServiceProvider(), array(
 ));
 
 $sql = "SHOW TABLES LIKE 'bibslia'";
-if(count($app['db']->fetchAll($sql)) == 0 AND !isset($_GET['import'])) {
+var_dump(count($app['db']->fetchAll($sql)));
+if(count($app['db']->fetchAll($sql)) === 0 AND !isset($_GET['import'])) {
   // echo __DIR__;
   die('Baza de date nu a fost importata! Daca vrei sa import automat baza de date, <a href="/bigdump.php">click aici</a>!');
 }
