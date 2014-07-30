@@ -40,7 +40,7 @@ $db_connection_charset = 'utf8';
 
 $filename           = 'biblia.sql';     // Specify the dump filename to suppress the file selection dialog
 $ajax               = true;   // AJAX mode: import will be done without refreshing the website
-$linespersession    = 500;   // Lines to be executed per one import session
+$linespersession    = 1000;   // Lines to be executed per one import session
 $delaypersession    = 0;      // You can specify a sleep time in milliseconds after each session
                               // Works only if JavaScript is activated. Use to reduce server overrun
 
