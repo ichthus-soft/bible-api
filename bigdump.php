@@ -31,6 +31,7 @@ $app->register(new \Silex\Provider\DoctrineServiceProvider(), array(
 ));
 
 $sql = "SHOW TABLES LIKE 'biblia'";
+var_dump($_GET['start']);
 if(count($app['db']->fetchAll($sql)) == 1 AND $_GET['start'] != '1') {
   // echo __DIR__;
   die('Baza de date a fost deja importata!');
