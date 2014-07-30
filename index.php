@@ -37,9 +37,7 @@ if(count($app['db']->fetchAll($sql)) === 0 AND !isset($_GET['import'])) {
 }
 
 $app->get('/', function() use ($app) {
-    $post = $app['db']->fetchAll($sql);
-    var_dump($post);
-return 'hello!';
+    return 'hello!';
 });
 
 $app->get('/v2/{query}.cauta', function($query) use($app) {
