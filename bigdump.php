@@ -73,7 +73,7 @@ if ($ajax)
 
 define ('VERSION','0.35b');
 define ('DATA_CHUNK_LENGTH',16384);  // How many chars are read per time
-define ('TESTMODE',true);           // Set to true to process the file without actually accessing the database
+define ('TESTMODE',false);           // Set to true to process the file without actually accessing the database
 define ('BIGDUMP_DIR',dirname(__FILE__));
 define ('PLUGIN_DIR',BIGDUMP_DIR.'/plugins/');
 
