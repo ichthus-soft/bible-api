@@ -14,6 +14,8 @@ use BibleRef\Reference;
 use BibleRef\Utils;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Rah\Danpu\Dump;
+use Rah\Danpu\Import;
 
 $app = new \Silex\Application();
 
@@ -27,6 +29,12 @@ $app->register(new \Silex\Provider\DoctrineServiceProvider(), array(
             'charset'   => 'utf8',
         )
 ));
+
+$sql = "SHOW TABLES LIKE 'bibslia'";
+if(count($app['db']->fetchAll($sql)) == 0 AND !isset($_GET['import'])) {
+  // echo __DIR__;
+  die('Baza de date nu a fost importata! Daca vrei sa import automat baza de date, <a href="/bigdump.php">click aici</a>!');
+}
 
 $app->get('/', function() use ($app) {
     $post = $app['db']->fetchAll($sql);
