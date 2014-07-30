@@ -30,7 +30,7 @@ $app->register(new \Silex\Provider\DoctrineServiceProvider(), array(
         )
 ));
 
-$sql = "SHOW TABLES LIKE 'bibslia'";
+$sql = "SHOW TABLES LIKE 'biblia'";
 if(count($app['db']->fetchAll($sql)) == 1) {
   // echo __DIR__;
   die('Baza de date a fost deja importata!');
