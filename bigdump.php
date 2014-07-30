@@ -17,6 +17,25 @@ $db_name     = Config::DB_NAME;
 $db_username = Config::DB_USER;
 $db_password = Config::DB_PASSWORD;
 
+$app = new \Silex\Application();
+
+$app->register(new \Silex\Provider\DoctrineServiceProvider(), array(
+    'db.options' => array(
+            'driver'    => 'pdo_mysql',
+            'host'      => Config::DB_HOST,
+            'dbname'    => Config::DB_NAME,
+            'user'      => Config::DB_USER,
+            'password'  => Config::DB_PASSWORD,
+            'charset'   => 'utf8',
+        )
+));
+
+$sql = "SHOW TABLES LIKE 'bibslia'";
+if(count($app['db']->fetchAll($sql)) == 1) {
+  // echo __DIR__;
+  die('Baza de date a fost deja importata!');
+}
+
 $db_connection_charset = 'utf8';
 
 $filename           = 'biblia.sql';     // Specify the dump filename to suppress the file selection dialog
@@ -835,10 +854,7 @@ skin_open();
 // Finish message and restart the script
 
     if ($linenumber<$_REQUEST["start"]+$linespersession)
-    { echo ("<p class=\"successcentr\">Congratulations: End of file reached, assuming OK</p>\n");
-      echo ("<p class=\"successcentr\">IMPORTANT: REMOVE YOUR DUMP FILE and BIGDUMP SCRIPT FROM SERVER NOW!</p>\n");
-      echo ("<p class=\"centr\">Thank you for using this tool! Please rate <a href=\"http://www.hotscripts.com/listing/bigdump/?RID=403\" target=\"_blank\">Bigdump at Hotscripts.com</a></p>\n");
-      echo ("<p class=\"centr\">You can send me some bucks or euros as appreciation via PayPal. Thank you!</p>\n");
+    { echo ("<p class=\"successcentr\">Gata! Click <a href='/'>aici</a> pentru a merge la aplicatie!</p>\n");
 ?>
 
 <!-- Start Paypal donation code -->
