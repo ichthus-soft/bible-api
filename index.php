@@ -1,19 +1,29 @@
 <?php
+namespace Bible_api;
+
+if(!file_exists(__DIR__.'/vendor/autoload.php')) {
+  die('Inainte de a folosi acest api, trebuie sa instalezi dependentele folosind "composer install"');
+}
 require_once __DIR__.'/vendor/autoload.php';
+if(!file_exists(__DIR__.'/config.php')) {
+  die('Inainte de a folosi acest api, copiaza fisierul config.php.dist in config.php si schimba setarile de conexiune la baza de date!');
+}
+require_once __DIR__.'/config.php';
+
 use BibleRef\Reference;
 use BibleRef\Utils;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-$app = new Silex\Application();
+$app = new \Silex\Application();
 
-$app->register(new Silex\Provider\DoctrineServiceProvider(), array(
+$app->register(new \Silex\Provider\DoctrineServiceProvider(), array(
     'db.options' => array(
             'driver'    => 'pdo_mysql',
-            'host'      => 'localhost',
-            'dbname'    => 'biblia',
-            'user'      => 'biblia',
-            'password'  => 'biblia',
+            'host'      => Config::DB_HOST,
+            'dbname'    => Config::DB_NAME,
+            'user'      => Config::DB_USER,
+            'password'  => Config::DB_PASSWORD,
             'charset'   => 'utf8',
         )
 ));
@@ -59,7 +69,7 @@ $app->get('/v2/{query}.js', function($query) use($app) {
     $string .= "document.writeln(\"<p>$text</p>\");";
   }
   $pasaj = $return["pasaj"];
-  $string .= "document.writeln(\"<span class=\"referinta\">$pasaj</p>\");";
+  $string .= "document.writeln(\"<span class='referinta'>$pasaj</p>\");";
   $response = new Response();
   // $response->setCharset('UTF-8');
   $response->headers->set('Content-Type', 'text/javascript');

@@ -1,0 +1,9 @@
+<?php
+namespace Bible_api;
+
+class Config {
+  const DB_HOST = 'localhost';
+  const DB_NAME = 'biblia';
+  const DB_USER = 'biblia';
+  const DB_PASSWORD = 'biblia';
+}
