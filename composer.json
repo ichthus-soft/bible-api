@@ -1,0 +1,7 @@
+{
+    "require": {
+        "silex/silex": "~1.2",
+        "ichthus-soft/bible_ref": "dev-master",
+        "doctrine/dbal": "2.2.*"
+    }
+}
