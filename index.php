@@ -172,56 +172,23 @@ $app->run();
 function v2_query($query, &$app) {
   $test = new Reference($query);
   $test = $test->v2();
-  var_dump($test); die;
-  $return = [];
+  $return['pasaj'] = $test['passage'];
   $return['versete'] = [];
   $return['text'] = '';
-  $query = str_replace('+',' ',$query);
-  $qpentrupasaj = str_replace('&',',',$query);
-  $qpentrupasaj = str_replace(';',' ',$qpentrupasaj);
-  $return['pasaj'] = $qpentrupasaj;
-  $arr = explode(';',$query);
-  foreach($arr as $a) {
-    $parts = preg_split('/[^a-z]/i', $a,2);
-    // $nume = trim(preg_replace('/\d+\s*$/', "", $parts[0]));
-    $nume = $parts[0];
-    $p = explode('&',$parts[1]);
-    foreach($p as $parte) {
-      $pp = explode(':',$parte);
-      $capitol = $pp[0];
-      $versete = explode(',',$pp[1]);
-      foreach($versete as $verset) {
-        if(Utils::isARange($verset)) {
-          $allr = Utils::getVersesArray($verset);
-          foreach($allr as $v) {
-            $a = [];
-            $_verset = $app['db']->fetchAssoc("SELECT * FROM biblia WHERE carte = ? AND capitol = ? AND verset = ?",
-              [$nume, $capitol, $v]);
-            if($_verset)
-            {
-              $a['testament'] = $_verset['testament'];
-              $a['carte'] = $_verset['carte'];
-              $a['capitol'] = $_verset['capitol'];
-              $a['verset'] = $_verset['verset'];
-              $a['text'] = $_verset['text'];
-              array_push($return['versete'], $a);
-              $return['text'] .= $_verset['text'].' ';
-            }
-          }
-        } else {
-          $a = [];
-            $_verset = $app['db']->fetchAssoc("SELECT * FROM biblia WHERE carte = ? AND capitol = ? AND verset = ?",
-              [$nume, $capitol, $verset]);
-            if($_verset)
-            {
-              $a['testament'] = $_verset['testament'];
-              $a['carte'] = $_verset['carte'];
-              $a['capitol'] = $_verset['capitol'];
-              $a['verset'] = $_verset['verset'];
-              $a['text'] = $_verset['text'];
-              array_push($return['versete'], $a);
-              $return['text'] .= $_verset['text'].' ';
-            }
+  foreach($test['books'] as $nume => $versete) {
+    foreach($versete['verses'] as $capitol => $verset) {
+      foreach($verset as $v) {
+          $_verset = $app['db']->fetchAssoc("SELECT * FROM biblia WHERE carte = ? AND capitol = ? AND verset = ?",
+    [$nume, $capitol, $v]);
+        if($_verset)
+        {
+          $a['testament'] = $_verset['testament'];
+          $a['carte'] = $_verset['carte'];
+          $a['capitol'] = $_verset['capitol'];
+          $a['verset'] = $_verset['verset'];
+          $a['text'] = $_verset['text'];
+          array_push($return['versete'], $a);
+          $return['text'] .= $_verset['text'].' ';
         }
       }
     }
