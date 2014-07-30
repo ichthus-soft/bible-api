@@ -1,7 +1,7 @@
 {
     "require": {
         "silex/silex": "~1.2",
-        "ichthus-soft/bible_ref": "dev-master",
+        "ichthus-soft/bible_ref": ">=1.0",
         "doctrine/dbal": "2.2.*"
     }
 }

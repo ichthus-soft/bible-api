@@ -170,6 +170,9 @@ $app->run();
 
 
 function v2_query($query, &$app) {
+  $test = new Reference($query);
+  $test = $test->v2();
+  var_dump($test); die;
   $return = [];
   $return['versete'] = [];
   $return['text'] = '';
