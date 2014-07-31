@@ -40,6 +40,16 @@ $app->get('/', function() use ($app) {
     return 'hello!';
 });
 
+$app->get('/v2/versetulZilei', function() use ($app) {
+$text = file_get_contents(Config::API_RESURSE_CRESTINE);
+  $text = strip_tags($text);
+  $pasaj = preg_match("/document.write\(\'(.*?)\'\)/", $text, $text);
+  if(isset($text[1]))
+    $text = $text[1];
+  $text = v2_query($text, $app);
+  return $app->json($text,201);
+});
+
 $app->get('/v2/{query}.cauta', function($query) use($app) {
   $return = [];
   $return['rezultate'] = 0;
