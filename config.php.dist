@@ -6,5 +6,6 @@ class Config {
   const DB_NAME = 'biblia';
   const DB_USER = 'biblia';
   const DB_PASSWORD = 'biblia';
+
   const API_RESURSE_CRESTINE = 'http://www.resursecrestine.ro/web-api-versetul-zilei';
 }
