@@ -191,6 +191,8 @@ function v2_query($query, &$app) {
   $return['pasaj'] = $test['passage'];
   $return['versete'] = [];
   $return['text'] = '';
+  $return['nl'] = '';
+  $return['nlvn'] = '';
   foreach($test['books'] as $nume => $versete) {
     foreach($versete['verses'] as $capitol => $verset) {
       foreach($verset as $v) {
@@ -205,6 +207,8 @@ function v2_query($query, &$app) {
           $a['text'] = $_verset['text'];
           array_push($return['versete'], $a);
           $return['text'] .= $_verset['text'].' ';
+          $return['nl'] .= $_verset['text'].'<br>';
+          $return['nlvn'] .= '<span style="font-size: 10px;">'.$_verset['verset'].'</span> '.$_verset['text'].'<br>';
         }
       }
     }
