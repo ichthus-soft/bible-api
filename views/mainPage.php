@@ -80,13 +80,10 @@
     </div>
     <div class="col-md-3 column">
       <h2>
-        Heading
+        Documentatie
       </h2>
       <p>
-        Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-      </p>
-      <p>
-        <a class="btn" href="#">View details »</a>
+        <a class="btn btn-info" href="https://github.com/ichthus-soft/bible-api/blob/master/readme.md" target="_blank">Citeste documentatia pe Github »</a>
       </p>
     </div>
   </div>
