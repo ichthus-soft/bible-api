@@ -40,6 +40,11 @@ Api-ul returneaza:
  - **nl** - versetele cu cate un ```<br>``` intre ele
  - **nlvn** - versetele cu un ```<br>``` intre ele si cu numarul versetului la inceput de rand
 
+In textul versetelor, cuvintele rostite de Domnul Isus sunt intr-un span cu clasa **.Isus**. Astfel poti din css-ul tau sa colorezi aceste cuvinte sau sa le dai un stil special fata de restul textului.
+
+**Versetul zilei**
+Tot in acest api poti accesa **versetul zilei** cu ajutorul api-ului de la **Resursecrestine.ro**. Tot ce trebuie sa faci este sa vizitezi **biblia.filipac.net/v2/versetulZilei** si vei primi raspuns in acelasi stil standardizat pe care il gasesti la sfarsitul acestei documentatii.
+
 Cum pot ajuta acest proiect?
 ---
 Poti ajuta in multe moduri, amintesc doar unele din ele:
