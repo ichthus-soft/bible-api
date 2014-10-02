@@ -11,6 +11,8 @@ Cum se face query-ul
 ---------------
 Bible Api foloseste pachetul **ichthus-soft/bible_ref** pentru a intelege query-ul pe care doresti sa il returnezi.  Astfel ai urmatoarele optiuni:
 
+**Nota autor:** De-a lungul exemplelor vei vedea ca poti in loc de spatiu sa pui **+**. Astfel url-ul va arata mult mai frumos decat cu spatiu. Este strict o alegere de gust, API-ul intelege si un query cu spatiu si un query cu **+**
+
 ```markdown
 # Un singur verset
 Ioan 3:16 sau Ioan+3:16
