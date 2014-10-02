@@ -95,3 +95,8 @@ nl: "<span class='Isus'>Fiindcă atât de mult a iubit Dumnezeu lumea, că a dat
 nlvn: "<span style="font-size: 10px;">16</span> <span class='Isus'>Fiindcă atât de mult a iubit Dumnezeu lumea, că a dat pe singurul Lui Fiu, pentru ca oricine crede în El să nu piară, ci să aibă viaţa veşnică.</span><br><span style="font-size: 10px;">1</span> La început era Cuvântul, şi Cuvântul era cu Dumnezeu, şi Cuvântul era Dumnezeu.<br>"
 }
 ```
+
+Site-uri care folosesc acest api si de care stim
+--
+
+ - [www.bisericasega.ro](http://www.bisericasega.ro)
