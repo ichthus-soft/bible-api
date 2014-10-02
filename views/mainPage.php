@@ -41,6 +41,9 @@
           Biblia - Api JSON
         </h1>
         <p>
+          <img src="https://raw.githubusercontent.com/ichthus-soft/bible-api/master/bibleapi.jpg" alt="Biblie Api - Biblia in format JSON" width="300">
+        </p>
+        <p>
           In Iulie 2014 am inceput sa fac un mic script de PHP cu care sa pot extrage anumite versete din Biblie din baza de date si sa le returnez in format JSON ca sa le pot folosi in mai multe proiecte.
         </p>
         <p>
