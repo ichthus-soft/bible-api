@@ -37,7 +37,8 @@ if(count($app['db']->fetchAll($sql)) === 0 AND !isset($_GET['import'])) {
 }
 
 $app->get('/', function() use ($app) {
-    return 'hello!';
+    include 'views/mainPage.php';
+    return '';
 });
 
 $app->get('/v2/versetulZilei', function() use ($app) {
