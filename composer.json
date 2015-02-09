@@ -1,5 +1,14 @@
 {
-    "require": {
+  "name": "ichthus-soft/bible-api",
+  "description": "Biblia Cornilescu API",
+  "keywords": [
+    "bible",
+    "biblia",
+    "cornilescu"
+  ],
+  "license": "MIT",
+  "type": "project",
+  "require": {
         "silex/silex": "~1.2",
         "ichthus-soft/bible_ref": ">=1.1",
         "doctrine/dbal": "2.2.*"
