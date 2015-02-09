@@ -64,10 +64,11 @@ Cum instalez la mine pe site acest api?
 --
 Nu trebuie neaparat sa instalezi acest API, poti folosi cu incredere serverul meu. Totusi daca tu crezi ca mi-ai incetini cumva serverul cu mii de accesari pe minut, poti sa il instalezi pe serverul tau. Tot ce ai nevoie este un **Apache**, **PHP 5.5**, **Composer** si **Mysql**. Pasii sunt mai jos:
 
-Metoda 1:
+**Metoda 1:**
  - Cloneaza acest proiect de Github: ```git clone https://github.com/ichthus-soft/bible-api```
  - Instaleaza proiectul folosind Composer - ```composer install```
-Metoda 2:
+
+**Metoda 2:**
 - Instaleaza proiectul folosit composer: ```composer require ichtus-soft/bible-api```.
 
 **Configurare:**
