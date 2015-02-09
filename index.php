@@ -110,7 +110,6 @@ $app->get('/v1/{query}', function($query) use($app) {
   $arr = (new Reference($query, false))->getArray();
   $verses = [];
   $q = "SELECT * FROM biblia WHERE ";
-  // var_dump(count($arr));
   if(is_array($arr)) {
     $cnt = 0;
       if(!isset($arr['name'])):
