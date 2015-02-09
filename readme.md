@@ -76,6 +76,9 @@ Nu trebuie neaparat sa instalezi acest API, poti folosi cu incredere serverul me
  - Acceseaza URL-ul public al serverului si urmeaza pasii de pe ecran pentru a insera tabelele in Mysql, necesare pentru a functiona.
  - Gata! Ai instalat API-ul local. Acum in loc de ```biblia.filipac.net``` poti folosi url-ul tau propriu.
 
+**Daca nu ai instalat local Apache:**
+Pentru development poti lucra cu serverul intern PHP. Tot ce trebuie sa faci este sa deschizi un terminal in directorul unde ai instalat proiectul si sa scrii urmatoarea comanda: ```php -S localhost:80```. Apoi poti vizita ```http://localhost``` si vei vedea noul tau proiect functional. Pentru asta trebuie sa ai o  versiune de PHP mai mare de 5.4.
+
 **Exemplu query si raspuns**
 --
 *http://biblia.filipac.net/v2/Ioan+3:16&1:1*
