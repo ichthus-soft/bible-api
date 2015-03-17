@@ -83,7 +83,7 @@
     </div>
     <div class="col-md-3 column">
       <h2>
-        Documentatie
+        Documentatieeee
       </h2>
       <p>
         <a class="btn btn-info" href="https://github.com/ichthus-soft/bible-api/blob/master/readme.md" target="_blank">Citeste documentatia pe Github »</a>
